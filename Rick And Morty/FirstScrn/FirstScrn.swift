@@ -15,11 +15,14 @@ class FirstScrn: UIViewController{
     var selectByName = false
     var selectByGender = false
     
+    var checkForListNil: Bool?
+    
     var nameForSearch: String?
     var typeForSearch: String?
     var speciesForSearch: String?
     var statusForSearch: String?
     var genderForSearch: String?
+    let refreshControl = UIRefreshControl()
     @IBAction func darkmodeOnOFF(_ sender: UISwitch) {
         if #available(iOS 13.0, *){
             let delegate = UIApplication.shared.windows.first
@@ -34,7 +37,17 @@ class FirstScrn: UIViewController{
         super.viewDidLoad()
         setBuindings()
         vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", type: typeForSearch ?? "", gender: genderForSearch ?? "")
-        tableView.reloadData()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        if self.traitCollection.userInterfaceStyle == .dark{
+            switchOutlet.isOn = true
+        }else{
+            switchOutlet.isOn = false
+        }
+    }
+    @objc func refresh(_ sender: AnyObject) {
+        vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", type: typeForSearch ?? "", gender: genderForSearch ?? "")
     }
     @IBAction func bySpecies(_ sender: UIButton) {
         selectBySpecies = true
@@ -86,6 +99,7 @@ class FirstScrn: UIViewController{
             tableView.dataSource = self
         }
     }
+    @IBOutlet weak var switchOutlet: UISwitch!
 }
 
 extension FirstScrn: UITableViewDelegate, UITableViewDataSource{
@@ -105,16 +119,19 @@ extension FirstScrn: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondScrnVC") as! SecondScrnVC
+        vc.data = data?.results?[safe: indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
-        vc.data = data?.results?[indexPath.row]
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == (data?.results?.count ?? 0) - 1{
-            vm.getListPaignation(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", type: typeForSearch ?? "", gender: genderForSearch ?? "")
-            tableView.reloadData()
+            if indexPath.row == (self.data?.results?.count ?? 0) - 1{
+                if self.checkForListNil == true {
+                    print("stop")
+                }else if self.checkForListNil == false {
+                    self.vm.getListPaignation(name: self.nameForSearch ?? "", status: self.statusForSearch ?? "", species: self.speciesForSearch ?? "", type: self.typeForSearch ?? "", gender: self.genderForSearch ?? "")
+                }
+            }
         }
     }
-}
 extension FirstScrn{
     func setBuindings(){
         vm.success = { [weak self] next, data in
@@ -126,10 +143,14 @@ extension FirstScrn{
                 self.data = data
             }
             DispatchQueue.main.async {
-                print("data\(data)")
+                if data?.results == nil{
+                    self.checkForListNil = true
+                }else{
+                    self.checkForListNil = false
+                }
+                self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
             }
-            print(data)
         }
     }
 }

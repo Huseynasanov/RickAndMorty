@@ -18,7 +18,7 @@ class ViewModel{
         let statuss = status.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let typee = type.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let url = "https://rickandmortyapi.com/api/character/?page=\(pageNum)&name=\(namee)&status=\(statuss)&species=\(speciess)&type=\(typee)&gender=\(genderr)"
-        print("knkjndc\(url)")
+        print("URL LIST:\(url)")
         var urlRequest = URLRequest(url: URL(string: url)!)
         urlRequest.httpMethod = "GET"
         let session = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, res, err in
@@ -47,7 +47,7 @@ class ViewModel{
         let statuss = status.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let typee = type.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let url = "https://rickandmortyapi.com/api/character/?page=\(pageNum)&name=\(namee)&status=\(statuss)&species=\(speciess)&type=\(typee)&gender=\(genderr)"
-        print("knkjndc\(url)")
+        print("URL PAIGNATION: \(url)")
         var urlRequest = URLRequest(url: URL(string: url)!)
         urlRequest.httpMethod = "GET"
         let session = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, res, err in
