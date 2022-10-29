@@ -14,9 +14,7 @@ class FirstScrn: UIViewController{
     var selectByStatus = false
     var selectByName = false
     var selectByGender = false
-    
     var checkForListNil: Bool?
-    
     var nameForSearch: String?
     var typeForSearch: String?
     var speciesForSearch: String?

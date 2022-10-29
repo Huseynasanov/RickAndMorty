@@ -8,7 +8,6 @@
 import Foundation
 class ViewModel{
     var success: ((Bool, Data?) -> Void)?
-    var error : ((Bool) -> Void)?
     var pageNum = 1
     func getList(name: String,status: String,species: String,type: String,gender: String){
         pageNum = 1

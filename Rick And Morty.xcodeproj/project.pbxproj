@@ -117,9 +117,50 @@
 		E562F5EB290BAFF70035D47F /* SecondScrn */ = {
 			isa = PBXGroup;
 			children = (
-				E562F5EC290BB01D0035D47F /* SecondScrnVC.swift */,
+				E5A5B8EA290D8E6C008DE33C /* ViewControler */,
 			);
 			path = SecondScrn;
+			sourceTree = "<group>";
+		};
+		E5A5B8E5290D8DAA008DE33C /* ViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				E5EF19A9290AF15700CBD3C7 /* FirstScrn.swift */,
+				E5EF19D5290AFDDD00CBD3C7 /* CellOfFirstScrn.swift */,
+			);
+			path = ViewControler;
+			sourceTree = "<group>";
+		};
+		E5A5B8E6290D8DC4008DE33C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E51BC5C2290D149A0024B871 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E5A5B8E7290D8DF3008DE33C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E5EF19D7290AFECA00CBD3C7 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E5A5B8E8290D8E04008DE33C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5EF19D9290AFED900CBD3C7 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5A5B8EA290D8E6C008DE33C /* ViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				E562F5EC290BB01D0035D47F /* SecondScrnVC.swift */,
+			);
+			path = ViewControler;
 			sourceTree = "<group>";
 		};
 		E5EF1999290AF15700CBD3C7 = {
@@ -147,15 +188,15 @@
 		E5EF19A4290AF15700CBD3C7 /* Rick And Morty */ = {
 			isa = PBXGroup;
 			children = (
+				E5A5B8E6290D8DC4008DE33C /* Extension */,
+				E5EF19AB290AF15700CBD3C7 /* Main.storyboard */,
 				E562F5EB290BAFF70035D47F /* SecondScrn */,
 				E5EF19DB290AFEF500CBD3C7 /* FirstScrn */,
 				E5EF19A5290AF15700CBD3C7 /* AppDelegate.swift */,
 				E5EF19A7290AF15700CBD3C7 /* SceneDelegate.swift */,
-				E5EF19AB290AF15700CBD3C7 /* Main.storyboard */,
 				E5EF19AE290AF15800CBD3C7 /* Assets.xcassets */,
 				E5EF19B0290AF15800CBD3C7 /* LaunchScreen.storyboard */,
 				E5EF19B3290AF15800CBD3C7 /* Info.plist */,
-				E51BC5C2290D149A0024B871 /* Extension.swift */,
 			);
 			path = "Rick And Morty";
 			sourceTree = "<group>";
@@ -180,10 +221,9 @@
 		E5EF19DB290AFEF500CBD3C7 /* FirstScrn */ = {
 			isa = PBXGroup;
 			children = (
-				E5EF19D5290AFDDD00CBD3C7 /* CellOfFirstScrn.swift */,
-				E5EF19A9290AF15700CBD3C7 /* FirstScrn.swift */,
-				E5EF19D7290AFECA00CBD3C7 /* ViewModel.swift */,
-				E5EF19D9290AFED900CBD3C7 /* Model.swift */,
+				E5A5B8E5290D8DAA008DE33C /* ViewControler */,
+				E5A5B8E7290D8DF3008DE33C /* ViewModel */,
+				E5A5B8E8290D8E04008DE33C /* Model */,
 			);
 			path = FirstScrn;
 			sourceTree = "<group>";

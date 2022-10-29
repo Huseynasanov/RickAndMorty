@@ -21,8 +21,6 @@ class SecondScrnVC: UIViewController {
         status.text = "Status: \(data?.status ?? "")"
         descriptionView.layer.cornerRadius = 20
     }
-    
-   
     @IBOutlet weak var descriptionView: UIView!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var name: UILabel!
