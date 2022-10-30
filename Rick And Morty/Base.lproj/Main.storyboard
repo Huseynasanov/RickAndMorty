@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4B9-Lz-yip">
-                                <rect key="frame" x="0.0" y="183" width="390" height="661"/>
+                                <rect key="frame" x="0.0" y="188" width="390" height="656"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellOfFirstScrn" rowHeight="143" id="q1l-4Z-DU3" customClass="CellOfFirstScrn" customModule="Rick_And_Morty" customModuleProvider="target">
@@ -104,23 +104,23 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psa-zx-f97">
-                                <rect key="frame" x="262" y="193" width="120" height="140"/>
+                                <rect key="frame" x="262" y="198" width="120" height="160"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bBD-em-z6h">
-                                        <rect key="frame" x="10" y="8" width="100" height="124"/>
+                                        <rect key="frame" x="10" y="8" width="100" height="144"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search filter:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFG-qm-x8V">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search filtter:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFG-qm-x8V">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="15"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Qly-Q1-d5i">
-                                                <rect key="frame" x="0.0" y="23" width="100" height="101"/>
+                                                <rect key="frame" x="0.0" y="23" width="100" height="121"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDB-Qr-9pp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="PsI-qn-rFz"/>
+                                                            <constraint firstAttribute="height" constant="25" id="PsI-qn-rFz"/>
                                                         </constraints>
                                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
@@ -132,9 +132,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27F-XM-xmc">
-                                                        <rect key="frame" x="0.0" y="27" width="100" height="20"/>
+                                                        <rect key="frame" x="0.0" y="32" width="100" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="F9U-aj-GeE"/>
+                                                            <constraint firstAttribute="height" constant="25" id="F9U-aj-GeE"/>
                                                         </constraints>
                                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
@@ -146,9 +146,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-pF-W7w">
-                                                        <rect key="frame" x="0.0" y="54" width="100" height="20"/>
+                                                        <rect key="frame" x="0.0" y="64" width="100" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="Gcz-um-xlF"/>
+                                                            <constraint firstAttribute="height" constant="25" id="Gcz-um-xlF"/>
                                                         </constraints>
                                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
@@ -160,9 +160,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlA-fk-Q7P">
-                                                        <rect key="frame" x="0.0" y="81" width="100" height="20"/>
+                                                        <rect key="frame" x="0.0" y="96" width="100" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="Wfx-e1-5es"/>
+                                                            <constraint firstAttribute="height" constant="25" id="Wfx-e1-5es"/>
                                                         </constraints>
                                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
@@ -185,7 +185,7 @@
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bBD-em-z6h" secondAttribute="trailing" constant="10" id="FJA-mG-h6A"/>
-                                    <constraint firstAttribute="height" constant="140" id="Myi-eX-1tm"/>
+                                    <constraint firstAttribute="height" constant="160" id="Myi-eX-1tm"/>
                                     <constraint firstItem="bBD-em-z6h" firstAttribute="top" secondItem="Psa-zx-f97" secondAttribute="top" constant="8" id="QCS-r3-Tr2"/>
                                     <constraint firstAttribute="width" constant="120" id="TLE-e0-IsS"/>
                                     <constraint firstAttribute="bottom" secondItem="bBD-em-z6h" secondAttribute="bottom" constant="8" id="mHb-Ht-Rey"/>
@@ -193,7 +193,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="beF-fe-64x">
-                                <rect key="frame" x="0.0" y="90" width="390" height="93"/>
+                                <rect key="frame" x="0.0" y="95" width="390" height="93"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-gV-LFe">
                                         <rect key="frame" x="10" y="8" width="144" height="31"/>
@@ -216,16 +216,18 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-44-gmM">
-                                                <rect key="frame" x="5" y="5" width="287" height="39"/>
+                                                <rect key="frame" x="5.0000000000000142" y="5" width="255.33333333333337" height="39"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBf-bv-cc0">
-                                                <rect key="frame" x="297" y="5" width="61" height="35"/>
+                                                <rect key="frame" x="265.33333333333331" y="5" width="92.666666666666686" height="35"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="keyboard.fill" catalog="system" title=" "/>
+                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title=" filtter" buttonSize="mini">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="filterSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6k5-HU-Oqw"/>
                                                 </connections>
@@ -256,7 +258,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4B9-Lz-yip" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Cn-yq-MW8"/>
-                            <constraint firstItem="beF-fe-64x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="90" id="5ah-Eg-pWF"/>
+                            <constraint firstItem="beF-fe-64x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="95" id="5ah-Eg-pWF"/>
                             <constraint firstAttribute="bottom" secondItem="4B9-Lz-yip" secondAttribute="bottom" id="8mm-2O-90k"/>
                             <constraint firstItem="beF-fe-64x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EAm-JF-gFk"/>
                             <constraint firstItem="4B9-Lz-yip" firstAttribute="top" secondItem="beF-fe-64x" secondAttribute="bottom" id="QxR-F5-hcD"/>
@@ -409,6 +411,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wi8-uG-8bE">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" systemColor="labelColor"/>
@@ -446,7 +449,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="keyboard.fill" catalog="system" width="128" height="78"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

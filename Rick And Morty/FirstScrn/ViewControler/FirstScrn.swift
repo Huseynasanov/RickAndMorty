@@ -16,7 +16,6 @@ class FirstScrn: UIViewController{
     var selectByGender = false
     var checkForListNil: Bool?
     var nameForSearch: String?
-    var typeForSearch: String?
     var speciesForSearch: String?
     var statusForSearch: String?
     var genderForSearch: String?
@@ -34,7 +33,7 @@ class FirstScrn: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setBuindings()
-        vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", type: typeForSearch ?? "", gender: genderForSearch ?? "")
+        vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", gender: genderForSearch ?? "")
         refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
@@ -45,7 +44,7 @@ class FirstScrn: UIViewController{
         }
     }
     @objc func refresh(_ sender: AnyObject) {
-        vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", type: typeForSearch ?? "", gender: genderForSearch ?? "")
+        vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", gender: genderForSearch ?? "")
     }
     @IBAction func bySpecies(_ sender: UIButton) {
         selectBySpecies = true
@@ -53,6 +52,8 @@ class FirstScrn: UIViewController{
         selectByStatus = false
         selectByName = false
         selectByGender = false
+        searchField.placeholder = "Search by species"
+        tableView.reloadData()
     }
     @IBAction func byGender(_ sender: UIButton) {
         selectByGender = true
@@ -60,6 +61,8 @@ class FirstScrn: UIViewController{
         selectByStatus = false
         selectByName = false
         dropdownView.isHidden = true
+        searchField.placeholder = "Search by gender"
+        tableView.reloadData()
     }
     @IBAction func byStatus(_ sender: UIButton) {
         selectByStatus = true
@@ -67,12 +70,16 @@ class FirstScrn: UIViewController{
         selectByName = false
         selectByGender = false
         dropdownView.isHidden = true
+        searchField.placeholder = "Search by status"
+        tableView.reloadData()
     }
     @IBAction func byName(_ sender: UIButton) {
         selectByName = true
         selectBySpecies = false
         selectByStatus = false
         selectByGender = false
+        searchField.placeholder = "Search by name"
+        tableView.reloadData()
         dropdownView.isHidden = true
     }
     @IBAction func filterSearch(_ sender: UIButton) {
@@ -80,6 +87,7 @@ class FirstScrn: UIViewController{
     }
     @IBOutlet weak var searchField: UITextField!{
         didSet{
+            searchField.placeholder = "Search by name"
             searchField.returnKeyType = UIReturnKeyType.done
             searchField.delegate = self
             searchField.autocorrectionType = .no
@@ -121,11 +129,11 @@ extension FirstScrn: UITableViewDelegate, UITableViewDataSource{
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            if indexPath.row == (self.data?.results?.count ?? 0) - 1{
-                if self.checkForListNil == true {
+            if indexPath.row == (data?.results?.count ?? 0) - 1{
+                if checkForListNil == true {
                     print("stop")
-                }else if self.checkForListNil == false {
-                    self.vm.getListPaignation(name: self.nameForSearch ?? "", status: self.statusForSearch ?? "", species: self.speciesForSearch ?? "", type: self.typeForSearch ?? "", gender: self.genderForSearch ?? "")
+                }else if checkForListNil == false {
+                    vm.getListPaignation(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", gender: genderForSearch ?? "")
                 }
             }
         }
@@ -157,6 +165,14 @@ extension FirstScrn: UITextFieldDelegate{
           self.view.endEditing(true)
           return false
       }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text{
+            if text == ""{
+                vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "" , gender: genderForSearch ?? "")
+                tableView.reloadData()
+            }
+        }
+    }
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if let text = textField.text{
             if text != ""{
@@ -171,11 +187,16 @@ extension FirstScrn: UITextFieldDelegate{
                 }else{
                     nameForSearch = text
                 }
-                vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "", type: typeForSearch ?? "", gender: genderForSearch ?? "")
+                vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "" , gender: genderForSearch ?? "")
+                tableView.reloadData()
             }else{
-                vm.getList(name: "", status: "", species: "", type: "", gender: "")
+                statusForSearch = ""
+                genderForSearch = ""
+                speciesForSearch = ""
+                nameForSearch = ""
+                vm.getList(name: nameForSearch ?? "", status: statusForSearch ?? "", species: speciesForSearch ?? "" , gender: genderForSearch ?? "")
+                tableView.reloadData()
             }
         }
-        tableView.reloadData()
     }
 }
